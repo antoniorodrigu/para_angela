@@ -40,7 +40,7 @@
       </div>
 
       <footer class="para-ti-actions">
-        <button id="btn-add-more-notes" class="btn-primary">Escribir algo más</button>
+        <button id="btn-add-more-notes" class="btn-primary"><span>Escribir algo más</span></button>
         <button id="btn-back-from-list" class="btn-return">
           <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           <span>Volver a la habitación</span>
@@ -71,8 +71,14 @@
         <textarea id="para-ti-input" class="para-ti-textarea" placeholder="Puedes escribir aquí lo que quieras decirme..." aria-label="Puedes escribir aquí lo que quieras decirme"></textarea>
       </article>
 
+      <p id="input-error-msg" class="input-error-msg hidden" aria-live="polite">Primero escribe esas palabras que quieras dejar aquí.</p>
+
+      <p class="whatsapp-note">Al continuar, se abrirá WhatsApp con tus palabras preparadas. Tú decides si quieres enviarlas.</p>
+
       <footer class="para-ti-actions">
-        <button id="btn-save-para-ti" class="btn-primary">Guardar estas palabras</button>
+        <button id="btn-save-para-ti" class="btn-primary">
+          <span>Guardar y enviarme estas palabras</span>
+        </button>
         <button id="btn-back-from-form" class="btn-return">
           <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           <span>Volver a la habitación</span>

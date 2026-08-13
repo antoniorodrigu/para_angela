@@ -151,7 +151,7 @@ body.para-ti-page {
   border-radius: 6px;
   border: 1px solid rgba(228, 202, 161, 0.55);
   box-shadow: 0 16px 40px rgba(98, 49, 61, 0.25), inset 0 0 30px rgba(221, 168, 170, 0.08);
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
   position: relative;
 }
 
@@ -173,6 +173,31 @@ body.para-ti-page {
   color: #C47F86;
   font-style: italic;
   opacity: 0.75;
+}
+
+.input-error-msg {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: #8A4F5C;
+  font-size: 0.95rem;
+  margin: -0.6rem 0 1rem 0;
+  text-align: center;
+  transition: opacity 300ms ease;
+}
+
+.input-error-msg.hidden {
+  display: none !important;
+}
+
+.whatsapp-note {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.84rem;
+  color: #783D4B;
+  opacity: 0.88;
+  text-align: center;
+  margin: 0 0 1.4rem 0;
+  line-height: 1.5;
+  max-width: 90%;
 }
 
 /* ── Saved Notes List ── */
@@ -285,8 +310,8 @@ body.para-ti-page {
   color: #FFF8F3;
   font-family: var(--font-sans, system-ui, sans-serif);
   font-size: 0.95rem;
-  letter-spacing: 0.1em;
-  padding: 0.8rem 2.4rem;
+  letter-spacing: 0.08em;
+  padding: 0.8rem 2.2rem;
   min-height: 46px;
   display: inline-flex;
   align-items: center;
@@ -296,6 +321,7 @@ body.para-ti-page {
   box-shadow: 0 6px 20px rgba(98, 49, 61, 0.3);
   transition: transform 300ms ease, box-shadow 300ms ease;
   touch-action: manipulation;
+  text-align: center;
 }
 
 .btn-primary:hover {
@@ -357,6 +383,7 @@ body.para-ti-page {
   .paper-card { padding: 1.5rem 1.2rem; }
   .para-ti-textarea { min-height: 160px; font-size: 16px; }
   .single-saved-card { padding: 1.2rem 1.2rem; }
+  .btn-primary { width: 100%; max-width: 340px; }
 }
 
 /* ── Reduced Motion ── */
