@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahora este espacio es tuyo, Ángela</title>
+  <link rel="stylesheet" href="./src/css/global.css">
+  <link rel="stylesheet" href="./src/css/para-ti.css">
+</head>
+<body class="para-ti-page">
+  <div class="page-transition-overlay" id="transition-overlay"></div>
+
+  <!-- Warm Ambient Glows -->
+  <div class="glow-spot spot-left" aria-hidden="true"></div>
+  <div class="glow-spot spot-right" aria-hidden="true"></div>
+
+  <!-- Background Floating Hearts -->
+  <div class="bg-heart heart-1" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="#783D4B"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  </div>
+  <div class="bg-heart heart-2" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="#E4CAA1"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  </div>
+
+  <main class="para-ti-container">
+    <!-- VIEW A: Saved Messages List -->
+    <section id="view-list" class="para-ti-view hidden">
+      <header class="para-ti-header">
+        <h1>Hay unas palabras tuyas guardadas aquí.</h1>
+        <p class="special-quote">Yo ya dejé mis palabras por toda esta habitación. Esta pequeña parte quería dejártela a ti.</p>
+        <div class="header-divider" aria-hidden="true">
+          <span class="line"></span>
+          <svg viewBox="0 0 24 24" fill="#783D4B" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span class="line"></span>
+        </div>
+      </header>
+
+      <div id="saved-notes-list" class="saved-notes-list">
+        <!-- Rendered saved notes -->
+      </div>
+
+      <footer class="para-ti-actions">
+        <button id="btn-add-more-notes" class="btn-primary">Escribir algo más</button>
+        <button id="btn-back-from-list" class="btn-return">
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Volver a la habitación</span>
+        </button>
+      </footer>
+    </section>
+
+    <!-- VIEW B: Form to Write -->
+    <section id="view-form" class="para-ti-view">
+      <header class="para-ti-header">
+        <h1>Ahora este espacio es tuyo, Ángela</h1>
+        <p class="special-quote">Yo ya dejé mis palabras por toda esta habitación. Esta pequeña parte quería dejártela a ti.</p>
+        
+        <div class="header-divider" aria-hidden="true">
+          <span class="line"></span>
+          <svg viewBox="0 0 24 24" fill="#783D4B" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span class="line"></span>
+        </div>
+
+        <div class="intro-paragraphs">
+          <p>Después de todo lo que preparé para ti, quería dejarte un pequeño lugar donde también pudieras dejar algo tuyo.</p>
+          <p>No tienes que escribir nada si no quieres.</p>
+          <p class="gentle-invite">Pero si hay algo que quieras decirme, algo que hayas sentido al ver todo esto, algo que te guste de mí o simplemente unas palabras que quieras guardar aquí, puedes hacerlo.</p>
+        </div>
+      </header>
+
+      <article class="paper-card">
+        <textarea id="para-ti-input" class="para-ti-textarea" placeholder="Puedes escribir aquí lo que quieras decirme..." aria-label="Puedes escribir aquí lo que quieras decirme"></textarea>
+      </article>
+
+      <footer class="para-ti-actions">
+        <button id="btn-save-para-ti" class="btn-primary">Guardar estas palabras</button>
+        <button id="btn-back-from-form" class="btn-return">
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Volver a la habitación</span>
+        </button>
+      </footer>
+    </section>
+
+    <!-- VIEW C: Reaction Screen After Saving -->
+    <section id="view-success" class="para-ti-view hidden">
+      <div class="success-card">
+        <div class="success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#783D4B" width="34" height="34"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <h2 class="success-title">Quedó guardado.</h2>
+        <p class="success-sub">Gracias por dejar una pequeña parte de ti aquí.</p>
+        <p class="success-footer-note">Lo que escribiste seguirá esperando cuando vuelvas.</p>
+
+        <div class="success-actions">
+          <button id="btn-view-notes" class="btn-secondary">Ver lo que escribí</button>
+          <button id="btn-back-from-success" class="btn-primary">
+            <span>Volver a la habitación</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./src/js/para-ti.js"></script>
+</body>
+</html>

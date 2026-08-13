@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosas que quería decirte</title>
+  <link rel="stylesheet" href="./src/css/global.css">
+  <link rel="stylesheet" href="./src/css/palabras.css">
+</head>
+<body class="palabras-page">
+  <div class="page-transition-overlay" id="transition-overlay"></div>
+
+  <!-- Warm Ambient Glows -->
+  <div class="glow-spot spot-left" aria-hidden="true"></div>
+  <div class="glow-spot spot-right" aria-hidden="true"></div>
+
+  <!-- Background Floating Hearts -->
+  <div class="bg-heart heart-1" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="#783D4B"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  </div>
+  <div class="bg-heart heart-2" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="#E4CAA1"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  </div>
+
+  <main class="palabras-container">
+    <header class="palabras-header">
+      <h1>Cosas que quería decirte</h1>
+      <p class="palabras-sub">Pequeños papeles guardados para ti.</p>
+      <div class="header-divider" aria-hidden="true">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="#783D4B" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span class="line"></span>
+      </div>
+    </header>
+
+    <!-- Interactive Paper Slip Container -->
+    <div class="slip-wrapper">
+      <article id="paper-slip" class="paper-slip">
+        <div class="slip-header-accent" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#6E3944" width="16" height="16"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+
+        <p id="slip-text" class="slip-text">Cargando...</p>
+
+        <!-- Small Corner Rose Accent -->
+        <div class="slip-corner-accent" aria-hidden="true">
+          <svg viewBox="0 0 50 50" fill="none" width="36" height="36">
+            <path d="M10 40 Q20 30 35 15" stroke="#4A6B38" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="35" cy="15" r="5" fill="#6E3944"/>
+            <circle cx="33" cy="13" r="3" fill="#D7A4A5"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Counter -->
+      <div id="slip-counter" class="slip-counter" aria-live="polite">1 / 10</div>
+    </div>
+
+    <!-- Actions -->
+    <div class="palabras-actions">
+      <button id="btn-next" class="btn-primary">
+        <span>Descubrir otra</span>
+      </button>
+
+      <!-- Final Outro Screen (Hidden Initially) -->
+      <div id="outro-block" class="outro-block hidden">
+        <p class="outro-title">Eso era todo. Por ahora.</p>
+        <button id="btn-back" class="btn-return">
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span>Volver a la habitación</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="./src/js/palabras.js"></script>
+</body>
+</html>

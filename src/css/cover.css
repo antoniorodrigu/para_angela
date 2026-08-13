@@ -1,0 +1,259 @@
+/* ── Cover Page Base & Background ── */
+body.cover-page {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: radial-gradient(circle at 50% 40%, #F8EAE5 0%, #EBD4CE 45%, #62313D 100%);
+  color: #51352F;
+  font-family: var(--font-serif, "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif);
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: manipulation;
+}
+
+/* ── Warm Candle & Atmosphere Glows ── */
+.cover-glow {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(55px);
+  opacity: 0.28;
+}
+
+.glow-center {
+  width: 420px;
+  height: 420px;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #FFF8F3 0%, #E4CAA1 60%, transparent 100%);
+}
+
+.glow-left {
+  width: 300px;
+  height: 300px;
+  bottom: 10%;
+  left: -60px;
+  background: radial-gradient(circle, #DDA8AA 0%, #783D4B 70%, transparent 100%);
+}
+
+.glow-right {
+  width: 280px;
+  height: 280px;
+  top: 10%;
+  right: -50px;
+  background: radial-gradient(circle, #E4CAA1 0%, #C47F86 70%, transparent 100%);
+}
+
+/* ── Corner Flora SVG Accents ── */
+.corner-flora {
+  position: fixed;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.75;
+}
+
+.corner-flora.top-left { top: 1.5rem; left: 1.5rem; }
+.corner-flora.bottom-right { bottom: 1.5rem; right: 1.5rem; }
+
+/* ── Ambient Floating Hearts ── */
+.cover-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.25;
+  animation: floatHeart 6s ease-in-out infinite;
+}
+
+.cover-heart.heart-1 { top: 18%; left: 12%; width: 22px; height: 22px; animation-delay: 0s; }
+.cover-heart.heart-2 { bottom: 22%; right: 14%; width: 26px; height: 26px; animation-delay: 2s; }
+.cover-heart.heart-3 { top: 60%; left: 8%; width: 18px; height: 18px; animation-delay: 4s; }
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.06); }
+}
+
+/* ── Cover Container ── */
+.cover-container {
+  width: min(90vw, 760px);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* ── Title & Decorative Lines ── */
+.title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  margin-bottom: 0.8rem;
+  will-change: transform;
+}
+
+.title-line {
+  height: 1px;
+  flex: 1;
+  max-width: 100px;
+  background: linear-gradient(to right, transparent, #E4CAA1, transparent);
+  opacity: 0;
+  transition: opacity 800ms ease;
+}
+
+.title-line.visible { opacity: 0.8; }
+
+.cover-title {
+  font-family: var(--font-serif);
+  color: #FFF8F3;
+  font-size: clamp(3.2rem, 9vw, 5.8rem);
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(98, 49, 61, 0.4), 0 0 35px rgba(228, 202, 161, 0.4);
+  opacity: 0;
+  transform: translateY(14px) scale(0.97);
+  transition: opacity 900ms ease, transform 900ms ease;
+  will-change: transform, text-shadow;
+}
+
+.cover-title.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ── Heart Pulse Accent ── */
+.center-heart-pulse {
+  margin: 0.6rem 0 1.8rem 0;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+
+.center-heart-pulse.visible {
+  opacity: 0.85;
+  transform: scale(1);
+  animation: singlePulse 1.2s ease-in-out 1;
+}
+
+@keyframes singlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.22); }
+}
+
+/* ── Sequential Phrases ── */
+.cover-phrases {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.phrase {
+  font-family: var(--font-serif);
+  color: #51352F;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 800ms ease, transform 800ms ease;
+  max-width: 620px;
+}
+
+.phrase.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── CTA Section ── */
+.cover-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 800ms ease, transform 800ms ease;
+}
+
+.cover-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.phrase-italic {
+  font-style: italic;
+  color: #783D4B;
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem 0;
+}
+
+.btn-enter {
+  background: linear-gradient(135deg, rgba(120, 61, 75, 0.85) 0%, rgba(98, 49, 61, 0.95) 100%);
+  border: 1px solid #E4CAA1;
+  color: #FFF8F3;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  padding: 0.8rem 2.4rem;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(98, 49, 61, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  transition: transform 300ms ease, box-shadow 300ms ease, background 300ms ease;
+}
+
+.btn-enter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(98, 49, 61, 0.45), 0 0 15px rgba(228, 202, 161, 0.5);
+  background: linear-gradient(135deg, rgba(140, 71, 87, 0.95) 0%, rgba(110, 55, 69, 0.98) 100%);
+}
+
+.sub-cta {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.82rem;
+  color: #783D4B;
+  letter-spacing: 0.06em;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ── Mobile Optimization ── */
+@media (max-width: 768px) {
+  .corner-flora { opacity: 0.4; transform: scale(0.75); }
+  .cover-container { padding: 2rem 1rem; }
+  .title-line { max-width: 40px; }
+  .cover-title { font-size: 3.4rem; }
+  .phrase { font-size: 1.08rem; }
+  .phrase-italic { font-size: 1.05rem; }
+  .btn-enter { padding: 0.75rem 2.2rem; font-size: 0.9rem; }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .cover-title, .phrase, .cover-cta, .title-line, .center-heart-pulse {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+  .cover-heart { animation: none; }
+  .btn-enter:hover { transform: none; }
+}

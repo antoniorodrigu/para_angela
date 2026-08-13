@@ -1,0 +1,84 @@
+.door-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark);
+  padding: 2rem;
+}
+
+.door-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.door-content.hidden {
+  display: none;
+}
+
+.door-text {
+  font-family: var(--font-serif);
+  color: var(--text-warm);
+  font-size: 1.5rem;
+  line-height: 2;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.door-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1500ms ease, transform 1500ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .door-text {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .door-text.visible {
+    transition: none;
+  }
+}
+
+.door-footer {
+  margin-top: 4rem;
+  opacity: 0;
+  transition: opacity 1000ms ease;
+}
+
+.door-footer.visible {
+  opacity: 1;
+}
+
+.door-footer.hidden {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .door-footer {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: var(--accent-bronze);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color 300ms ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: var(--text-warm);
+  outline: none;
+}

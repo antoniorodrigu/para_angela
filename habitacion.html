@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La habitación</title>
+  <link rel="stylesheet" href="./src/css/global.css">
+  <link rel="stylesheet" href="./src/css/room.css">
+</head>
+<body>
+  <div class="page-transition-overlay" id="transition-overlay"></div>
+  <canvas id="room-canvas" aria-label="Habitación interactiva 3D"></canvas>
+  <div id="room-ui" class="room-ui">
+    <div id="object-label" class="object-label" aria-live="polite"></div>
+  </div>
+  <div class="sr-nav" aria-label="Objetos de la habitación">
+    <button id="btn-carta" class="sr-only" aria-label="La carta">La carta</button>
+    <button id="btn-libro" class="sr-only" aria-label="El libro">El libro</button>
+    <button id="btn-ventana" class="sr-only" aria-label="La ventana">La ventana</button>
+    <button id="btn-foto" class="sr-only" aria-label="Un recuerdo">Un recuerdo</button>
+    <button id="btn-palabras" class="sr-only" aria-label="Cosas que quería decirte">Cosas que quería decirte</button>
+    <button id="btn-para-ti" class="sr-only" aria-label="Este espacio es tuyo">Este espacio es tuyo</button>
+    <button id="btn-puerta" class="sr-only" aria-label="La puerta">La puerta</button>
+  </div>
+  <script type="module" src="./src/js/room.js"></script>
+</body>
+</html>

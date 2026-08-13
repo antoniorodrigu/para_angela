@@ -1,0 +1,124 @@
+.window-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #050505;
+  overflow: hidden;
+  position: relative;
+}
+
+.night-landscape {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #050505 0%, #0a0a0a 60%, #111111 100%);
+  z-index: 1;
+}
+
+.hill {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+  z-index: 2;
+}
+
+.hill-1 {
+  width: 150vw;
+  height: 40vh;
+  left: -25vw;
+  background: linear-gradient(to bottom, #0d0d0d, #050505);
+  bottom: -10vh;
+}
+
+.hill-2 {
+  width: 120vw;
+  height: 30vh;
+  left: -10vw;
+  background: linear-gradient(to bottom, #111111, #0a0a0a);
+  bottom: -5vh;
+  z-index: 3;
+}
+
+.hill-3 {
+  width: 100vw;
+  height: 20vh;
+  right: -20vw;
+  background: linear-gradient(to bottom, #141414, #0d0d0d);
+  bottom: 0;
+  z-index: 4;
+}
+
+.text-layer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 600px;
+}
+
+.window-text {
+  font-family: var(--font-serif);
+  color: var(--text-warm);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(10px);
+  margin-bottom: 2rem;
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+.window-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 2000ms ease, transform 2000ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .window-text {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .window-text.visible {
+    transition: none;
+  }
+}
+
+.window-footer {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: var(--accent-bronze);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color 300ms ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: var(--text-warm);
+  outline: none;
+}

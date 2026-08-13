@@ -1,0 +1,366 @@
+/* ── Para-Ti Page Base & Background ── */
+body.para-ti-page {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: radial-gradient(circle at 50% 40%, #F8EAE5 0%, #E6CEC8 50%, #62313D 100%);
+  color: #51352F;
+  font-family: var(--font-serif, "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif);
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: manipulation;
+  box-sizing: border-box;
+}
+
+/* ── Glow Spots ── */
+.glow-spot {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(55px);
+  opacity: 0.25;
+}
+
+.spot-left {
+  width: 380px;
+  height: 380px;
+  top: 15%;
+  left: -80px;
+  background: radial-gradient(circle, #FFF8F3 0%, #E4CAA1 70%, transparent 100%);
+}
+
+.spot-right {
+  width: 320px;
+  height: 320px;
+  bottom: 10%;
+  right: -60px;
+  background: radial-gradient(circle, #DDA8AA 0%, #783D4B 70%, transparent 100%);
+}
+
+/* ── Ambient Hearts ── */
+.bg-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.2;
+  animation: floatHeart 6s ease-in-out infinite;
+}
+
+.bg-heart.heart-1 { top: 15%; left: 8%; width: 24px; height: 24px; animation-delay: 0s; }
+.bg-heart.heart-2 { bottom: 18%; right: 10%; width: 28px; height: 28px; animation-delay: 3s; }
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.06); }
+}
+
+/* ── Main Container ── */
+.para-ti-container {
+  width: min(92vw, 680px);
+  margin: 0 auto;
+  padding: 2.5rem 1.2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+}
+
+.para-ti-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.para-ti-view.hidden {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.para-ti-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.para-ti-header h1 {
+  font-family: var(--font-serif);
+  color: #62313D;
+  font-size: clamp(1.75rem, 5vw, 2.4rem);
+  font-weight: normal;
+  margin: 0 0 0.6rem 0;
+}
+
+.special-quote {
+  font-style: italic;
+  color: #783D4B;
+  font-size: clamp(1.05rem, 3vw, 1.2rem);
+  line-height: 1.6;
+  margin: 0 0 1.2rem 0;
+  font-weight: 500;
+}
+
+.intro-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.intro-paragraphs p {
+  color: #51352F;
+  font-size: clamp(1.02rem, 2.8vw, 1.12rem);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.gentle-invite {
+  color: #783D4B !important;
+  font-style: italic;
+}
+
+.header-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0.75;
+  margin: 0.8rem 0;
+}
+
+.header-divider .line {
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, #E4CAA1, transparent);
+}
+
+/* ── Paper Card & Textarea ── */
+.paper-card {
+  background-color: #FFF8EF;
+  background-image: radial-gradient(circle at 50% 0%, rgba(248, 234, 229, 0.5) 0%, transparent 70%);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem 2.2rem;
+  border-radius: 6px;
+  border: 1px solid rgba(228, 202, 161, 0.55);
+  box-shadow: 0 16px 40px rgba(98, 49, 61, 0.25), inset 0 0 30px rgba(221, 168, 170, 0.08);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.para-ti-textarea {
+  width: 100%;
+  min-height: 180px;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-family: var(--font-serif);
+  color: #51352F;
+  font-size: 16px;
+  line-height: 1.8;
+  box-sizing: border-box;
+}
+
+.para-ti-textarea::placeholder {
+  color: #C47F86;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* ── Saved Notes List ── */
+.saved-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  width: 100%;
+  margin-bottom: 2.2rem;
+}
+
+.single-saved-card {
+  background-color: #FFF8EF;
+  padding: 1.6rem 2rem;
+  border-radius: 6px;
+  border: 1px solid rgba(228, 202, 161, 0.55);
+  box-shadow: 0 10px 25px rgba(98, 49, 61, 0.18);
+  text-align: left;
+  position: relative;
+}
+
+.saved-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.single-saved-date {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.78rem;
+  color: #8A4F5C;
+  letter-spacing: 0.06em;
+}
+
+.btn-edit-note {
+  background: none;
+  border: none;
+  color: #783D4B;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.4rem 0.8rem;
+  min-height: 36px;
+}
+
+.single-saved-text {
+  font-family: var(--font-serif);
+  color: #51352F;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* ── Success Card ── */
+.success-card {
+  background-color: #FFF8EF;
+  width: 100%;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(228, 202, 161, 0.6);
+  box-shadow: 0 20px 48px rgba(98, 49, 61, 0.3);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.success-icon { margin-bottom: 1.2rem; }
+
+.success-title {
+  font-family: var(--font-serif);
+  color: #62313D;
+  font-size: 2rem;
+  margin: 0 0 0.6rem 0;
+}
+
+.success-sub {
+  font-style: italic;
+  color: #783D4B;
+  font-size: 1.18rem;
+  margin: 0 0 0.4rem 0;
+}
+
+.success-footer-note {
+  font-size: 0.95rem;
+  color: #51352F;
+  margin: 0 0 2.2rem 0;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ── Buttons & Action Layout ── */
+.para-ti-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, rgba(120, 61, 75, 0.88) 0%, rgba(98, 49, 61, 0.96) 100%);
+  border: 1px solid #E4CAA1;
+  color: #FFF8F3;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  padding: 0.8rem 2.4rem;
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(98, 49, 61, 0.3);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+  touch-action: manipulation;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(98, 49, 61, 0.45), 0 0 15px rgba(228, 202, 161, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(228, 202, 161, 0.2);
+  border: 1px solid rgba(120, 61, 75, 0.4);
+  color: #62313D;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  padding: 0.7rem 2rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: background 300ms ease, color 300ms ease;
+  touch-action: manipulation;
+}
+
+.btn-secondary:hover {
+  background: rgba(120, 61, 75, 0.15);
+  color: #51352F;
+}
+
+.btn-return {
+  background: none;
+  border: none;
+  color: #783D4B;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 0.5rem 1.2rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 300ms ease, transform 300ms ease;
+  touch-action: manipulation;
+}
+
+.btn-return:hover {
+  color: #62313D;
+  transform: translateX(-4px);
+}
+
+.arrow-icon { transition: transform 300ms ease; }
+.btn-return:hover .arrow-icon { transform: translateX(-3px); }
+
+/* ── Mobile Optimization ── */
+@media (max-width: 768px) {
+  .para-ti-container { width: 92vw; padding: 1.8rem 0.8rem; }
+  .paper-card { padding: 1.5rem 1.2rem; }
+  .para-ti-textarea { min-height: 160px; font-size: 16px; }
+  .single-saved-card { padding: 1.2rem 1.2rem; }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .bg-heart { animation: none; }
+  .btn-primary:hover, .btn-return:hover { transform: none; }
+}

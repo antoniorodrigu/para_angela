@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un recuerdo</title>
+  <link rel="stylesheet" href="./src/css/global.css">
+  <link rel="stylesheet" href="./src/css/foto.css">
+</head>
+<body>
+  <div class="page-transition-overlay" id="transition-overlay"></div>
+  <main class="foto-container">
+    <h1 class="foto-title">Un recuerdo</h1>
+    <div class="foto-frame">
+      <img
+        id="foto-img"
+        src="./images/angela.jpg"
+        alt="Ángela"
+        onerror="this.style.display='none'; document.getElementById('foto-placeholder').style.display='flex'"
+      >
+      <div id="foto-placeholder" class="foto-placeholder" style="display: none;">
+        <p>La fotografía espera aquí.</p>
+      </div>
+    </div>
+    <p class="foto-caption">Hay recuerdos que todavía no tenemos. Este simplemente quería guardarlo aquí.</p>
+    <div class="foto-footer">
+      <button class="nav-link" id="btn-volver" aria-label="Volver a la habitación">Volver a la habitación</button>
+    </div>
+  </main>
+  <script type="module" src="./src/js/foto.js"></script>
+</body>
+</html>

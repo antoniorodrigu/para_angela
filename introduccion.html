@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducción</title>
+  <link rel="stylesheet" href="./src/css/global.css">
+  <link rel="stylesheet" href="./src/css/intro.css">
+</head>
+<body class="intro-page">
+  <div class="page-transition-overlay" id="transition-overlay"></div>
+
+  <!-- Warm Ambient Glows -->
+  <div class="intro-glow glow-top" aria-hidden="true"></div>
+  <div class="intro-glow glow-bottom" aria-hidden="true"></div>
+
+  <!-- Corner Flora SVG Accent -->
+  <div class="intro-flora top-right" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none" width="70" height="70">
+      <path d="M90 10 Q60 40 10 90" stroke="#C47F86" stroke-width="1.5"/>
+      <circle cx="70" cy="30" r="6" fill="#783D4B" opacity="0.8"/>
+      <circle cx="50" cy="50" r="8" fill="#DDA8AA" opacity="0.8"/>
+      <circle cx="30" cy="70" r="5" fill="#E4CAA1" opacity="0.8"/>
+    </svg>
+  </div>
+
+  <main class="intro-container" id="intro-main">
+    <div class="intro-content">
+      <p class="intro-phrase phrase-1" data-delay="600">Podría habértelo dicho en un mensaje.</p>
+
+      <div class="intro-divider divider-1" data-delay="1800" aria-hidden="true">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="#783D4B" width="12" height="12"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span class="line"></span>
+      </div>
+
+      <p class="intro-phrase phrase-2" data-delay="2400">Pero algunas personas hacen que uno quiera tomarse un poco más de tiempo.</p>
+
+      <div class="intro-divider divider-2" data-delay="4300" aria-hidden="true">
+        <span class="line"></span>
+        <svg viewBox="0 0 24 24" fill="#E4CAA1" width="12" height="12"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span class="line"></span>
+      </div>
+
+      <p class="intro-phrase phrase-3" data-delay="4900">Así que hice esto.</p>
+
+      <p class="intro-phrase phrase-special" data-delay="6400">Porque algunas personas hacen que uno tenga ganas de esforzarse un poquito más.</p>
+
+      <p class="intro-phrase phrase-dedication" data-delay="8000">Y sí... cada detalle que vas a encontrar aquí está pensado para ti.</p>
+    </div>
+
+    <!-- Continue Button -->
+    <div class="intro-cta" data-delay="9500" id="intro-cta">
+      <button class="btn-continue" id="continue-button" aria-label="Continúa a la habitación">
+        <span>Continúa</span>
+      </button>
+      <p class="sub-cta">La siguiente parte tienes que descubrirla tú.</p>
+    </div>
+  </main>
+
+  <script type="module" src="./src/js/intro.js"></script>
+</body>
+</html>
